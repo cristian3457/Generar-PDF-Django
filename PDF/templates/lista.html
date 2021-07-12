@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="http://127.0.0.1:8000/static/assets/images/logo.png" alt="logo">
+    <h2>Lista de empleados</h2>
+    <img src="http://127.0.0.1:8000{% static 'assets/images/food1.jpg' %}" alt="comida1">
+    <h3>Cantidad empleados: {{ count }}</h3>
+    <table border="1">
+        <thead>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Nombre completo</th>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr style="background-color: aqua;">
+                <td style="padding:5px 10px;">{{ empleado.first_name }}</td>
+                <td style="padding:5px 10px;">{{ empleado.last_name }}</td>
+                <td style="padding:5px 10px;">{{ empleado.full_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
